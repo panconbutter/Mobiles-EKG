@@ -51,10 +51,30 @@ void GRAPHICS_MainTask(void) {
  /* User can implement his graphic application here */
   /* Hello Word example */
     GUI_Clear();
-    GUI_SetColor(GUI_WHITE);
     GUI_SetFont(&GUI_Font32_1);
-    GUI_DispStringAt("Frohe Weihnachten!", (LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
-   
+    //GUI_DispStringAt("Frohe Weihnachten!", (LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
+
+    int divisionX = 48, divisionY = 34;
+
+    GUI_SetColor(GUI_DARKGRAY);
+
+    for(int i = 0; i <= 10; i++)
+    {
+    	GUI_DrawLine(divisionX, 0, divisionX, 272);
+    	divisionX += 48;
+    }
+
+    for(int i = 0; i <= 10; i++)
+    {
+    	GUI_DrawLine(0, divisionY, 480, divisionY);
+    	divisionY += 34;
+    }
+
+    GUI_SetColor(GUI_WHITE);
+    GUI_DrawRect(0, 0, 479, 271);
+    GUI_DrawLine(0, 136, 480, 136);
+    GUI_DrawLine(240, 0, 240, 272);
+
 /* USER CODE END GRAPHICS_MainTask */
   while(1)
 {
