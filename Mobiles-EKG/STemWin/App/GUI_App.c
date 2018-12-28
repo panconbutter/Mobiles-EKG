@@ -44,13 +44,18 @@
   */
 #include "GUI_App.h"
 #include "GUI.h"
+#include "DIALOG.h"
+
+//WM_HWIN Createstartup(void);
+//WM_HWIN Creatertc_lost(void);
+WM_HWIN Creategraph(void);
 
 void GRAPHICS_MainTask(void) {
 
 /* USER CODE BEGIN GRAPHICS_MainTask */
  /* User can implement his graphic application here */
   /* Hello Word example */
-    GUI_Clear();
+    /*GUI_Clear();
     GUI_SetFont(&GUI_Font20_1);
     GUI_DispStringAt("time/div", 390, 20);
     GUI_DispStringAt("volts/div", 390, 50);
@@ -75,8 +80,12 @@ void GRAPHICS_MainTask(void) {
     GUI_SetColor(GUI_WHITE);
     GUI_DrawRect(0, 0, 380, 271);
     GUI_DrawLine(0, 136, 380, 136);
-    GUI_DrawLine(190, 0, 190, 272);
+    GUI_DrawLine(190, 0, 190, 272);*/
 
+	GUI_Clear();
+	//Createstartup();
+	//Creatertc_lost();
+	Creategraph();
 
 
 /* USER CODE END GRAPHICS_MainTask */
