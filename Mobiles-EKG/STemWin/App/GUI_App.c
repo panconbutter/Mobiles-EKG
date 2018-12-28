@@ -51,29 +51,33 @@ void GRAPHICS_MainTask(void) {
  /* User can implement his graphic application here */
   /* Hello Word example */
     GUI_Clear();
-    GUI_SetFont(&GUI_Font32_1);
-    //GUI_DispStringAt("Frohe Weihnachten!", (LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
+    GUI_SetFont(&GUI_Font20_1);
+    GUI_DispStringAt("time/div", 390, 20);
+    GUI_DispStringAt("volts/div", 390, 50);
+    GUI_DispStringAt("Heartrate", 390, 110);
 
-    int divisionX = 48, divisionY = 34;
+    int divisionX = 38, divisionY = 34;
 
     GUI_SetColor(GUI_DARKGRAY);
 
-    for(int i = 0; i <= 10; i++)
+    for(int i = 0; i < 10; i++)
     {
     	GUI_DrawLine(divisionX, 0, divisionX, 272);
-    	divisionX += 48;
+    	divisionX += 38;
     }
 
-    for(int i = 0; i <= 10; i++)
+    for(int i = 0; i < 10; i++)
     {
-    	GUI_DrawLine(0, divisionY, 480, divisionY);
+    	GUI_DrawLine(0, divisionY, 380, divisionY);
     	divisionY += 34;
     }
 
     GUI_SetColor(GUI_WHITE);
-    GUI_DrawRect(0, 0, 479, 271);
-    GUI_DrawLine(0, 136, 480, 136);
-    GUI_DrawLine(240, 0, 240, 272);
+    GUI_DrawRect(0, 0, 380, 271);
+    GUI_DrawLine(0, 136, 380, 136);
+    GUI_DrawLine(190, 0, 190, 272);
+
+
 
 /* USER CODE END GRAPHICS_MainTask */
   while(1)
